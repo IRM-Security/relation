@@ -8,6 +8,11 @@ namespace Irm\Relation;
 class RelationHasMany extends DirectRelation
 {
     /**
+     * @var \Traversable|null
+     */
+    protected $emptyResult;
+
+    /**
      * @return \Traversable
      */
     protected function getEmptyResult()

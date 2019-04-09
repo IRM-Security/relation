@@ -8,6 +8,11 @@ namespace Irm\Relation;
 abstract class DirectRelation extends AbstractRelation
 {
     /**
+     * @var bool
+     */
+    protected $loaded = false;
+
+    /**
      * @var \Traversable|array
      */
     protected $children;

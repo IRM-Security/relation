@@ -14,16 +14,6 @@ abstract class AbstractRelation implements RelationInterface
     const CONFIG_KEY_MODEL = 'model';
 
     /**
-     * @var bool
-     */
-    protected $loaded = false;
-
-    /**
-     * @var \Traversable|null
-     */
-    protected $emptyResult;
-
-    /**
      * @var array
      */
     protected $config = [];
