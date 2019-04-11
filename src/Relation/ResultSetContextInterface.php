@@ -1,15 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Irm\Relation;
 
-/**
- * ResultSetContextInterface interface
- */
 interface ResultSetContextInterface extends \Traversable
 {
-    /**
-     * @param string $key
-     * @return array
-     */
-    public function extractUnique($key);
+    public function extractUnique(string $key): array;
 }

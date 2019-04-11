@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Irm\Relation;
 
-/**
- * RelationshipsAwareInterface interface
- */
 interface RelationshipsAwareInterface
 {
     /**
-     * @return RelationsContainerInterface
+     * @return ResultSetContextInterface|RelationshipsAwareInterface
      */
-    public function getRelationsContainer();
+    public function getRelationContext();
+
+    public function getRelationLoader(string $id): RelationsLoaderInterface;
+
+    public function getRelationHandler(array $config): RelationInterface;
 }

@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Irm\Relation;
 
-/**
- * RelationsLoaderInterface interface
- */
 interface RelationsLoaderInterface
 {
     /**

@@ -1,19 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Irm\Relation;
 
-/**
- * RelationsFactory interface
- */
 class RelationFactory
 {
-    /**
-     * @param array $config
-     * @return RelationInterface
-     */
-    public static function getInstance(array $config)
+    public static function getInstance(array $config): RelationInterface
     {
-        /** @var RelationInterface $relation */
         $relation = $config['type'];
         return new $relation($config);
     }
