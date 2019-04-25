@@ -6,9 +6,5 @@ namespace Irm\Relation;
 
 interface RelationsLoaderInterface
 {
-    /**
-     * @param array $options
-     * @return \Traversable
-     */
-    public function findAll($options = []);
+    public function findAll(array $options): \Traversable;
 }
