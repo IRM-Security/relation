@@ -118,12 +118,7 @@ abstract class AbstractRelation implements RelationInterface
     protected function getFilterValueFromContext(RelationshipsAwareInterface $model, string $property)
     {
         $context = $model->getRelationContext();
-
-        if ($context instanceof ResultSetContextInterface) {
-            return $context->extractUnique($property);
-        } else {
-            return $model->{'get' . ucfirst($property)}();
-        }
+        return $context->extractUnique($property);
     }
 
     protected function getChildModel(): string

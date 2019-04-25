@@ -6,10 +6,7 @@ namespace Irm\Relation;
 
 interface RelationshipsAwareInterface
 {
-    /**
-     * @return ResultSetContextInterface|RelationshipsAwareInterface
-     */
-    public function getRelationContext();
+    public function getRelationContext(): ResultSetContextInterface;
 
     public function getRelationLoader(string $id): RelationsLoaderInterface;
 
