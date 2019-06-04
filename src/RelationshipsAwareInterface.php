@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Irm\Relation;
+namespace AlBundy\Relation;
 
 interface RelationshipsAwareInterface
 {
