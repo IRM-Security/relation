@@ -82,7 +82,7 @@ abstract class AbstractRelation implements RelationInterface
 
     protected function getSingleRelationKey(array $properties, RelationshipsAwareInterface $model)
     {
-        return $model->{'get' . ucfirst($properties[0])}();
+        return (string) $model->{'get' . ucfirst($properties[0])}();
     }
 
     protected function getCompositeRelationKey(array $properties, RelationshipsAwareInterface $model): string
