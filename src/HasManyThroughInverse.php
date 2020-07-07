@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AlBundy\Relation;
 
-class HasManyThroughInverse extends HasManyThrough
+class HasManyThroughInverse extends HasMany
 {
     const CONFIG_THROUGH = 'through';
 
