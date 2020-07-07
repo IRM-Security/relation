@@ -38,6 +38,9 @@ class HasManyThrough extends HasMany
             $class = $this->getResultSetClass();
             $children = [];
             foreach ($this->throughIndex[$key] as $id) {
+                if (!isset($this->groupedChildren[$id])) {
+                    continue;
+                }
                 $children = array_merge($children, $this->groupedChildren[$id]);
             }
             return new $class($children);
