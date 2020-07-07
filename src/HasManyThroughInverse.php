@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AlBundy\Relation;
 
-class HasManyThrough extends HasMany
+class HasManyThroughInverse extends HasMany
 {
     const CONFIG_THROUGH = 'through';
 
@@ -25,7 +25,7 @@ class HasManyThrough extends HasMany
             $this->groupChildren($children);
         }
 
-        $key = $this->{$this->relationKeyMethod}($this->parentOnKeys, $model);
+        $key = $this->{$this->relationKeyMethod}($this->childOnKeys, $model);
 
         return $this->getPropertyValueForModel($key);
     }
@@ -51,7 +51,7 @@ class HasManyThrough extends HasMany
     {
         foreach ($children as $parent => $group) {
             foreach ($group as $child) {
-                $key = $this->{$this->relationKeyMethod}($this->childOnKeys, $child);
+                $key = $this->{$this->relationKeyMethod}($this->parentOnKeys, $child);
                 $this->throughIndex[$parent][] = $key;
             }
         };
@@ -63,7 +63,7 @@ class HasManyThrough extends HasMany
         foreach ($this->getOn() as $childModelProperty => $parentModelProperty) {
             $filter[$childModelProperty] = $this->getFilterValueFromGroup(
                 $children,
-                $childModelProperty
+                $parentModelProperty
             );
         }
 
